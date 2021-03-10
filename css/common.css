@@ -1,0 +1,174 @@
+/* font-family: 'Poppins', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin:0; padding:0; box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{}
+.header > nav{
+    width:100%;
+    position:fixed;
+    top:0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 98;
+    padding:40px;
+}
+.header > nav a{text-decoration: none; color:#000;}
+.header .hideMenu{
+    display:flex;
+}
+.header .hideMenu .panel > a{
+    text-decoration: none;
+    color:#fff;
+    padding:0 20px;
+}
+.header .hideMenu .panel > a span{
+    font-size:1.5em;
+}
+
+.header .hideMenu .panel{
+    display:flex;
+    align-items: center;
+    display:none;
+}
+
+.header .hideMenu .panel.active{
+    display:block;
+    transform:translate(40px, 30px);
+    display:flex;
+    align-items: center;
+}
+
+.cont{
+    width:100%;
+    position:relative;
+}
+
+.cont .sns{
+    position:fixed;
+    top:60%; right:5%;
+}
+.cont .sns img{
+    padding:0 10px;
+}
+
+.cont .main_c{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    position:relative; 
+}
+
+.cont .main_c .leftC{
+    width:33.5%;
+    position:relative;
+}
+.cont .main_c .leftC p::after{
+    content:'';
+    display:block;
+    width:100px;
+    border:1px solid rgb(153, 146, 146);
+    position:absolute;
+    left:18px; top:210px;
+    transform:rotate(90deg);
+}
+
+.cont .main_c .leftC p::before{
+    content:'';
+    display:block;
+    width:100px;
+    border:1px solid rgb(153, 146, 146);
+    position:absolute;
+    left:18px; top:430px;
+    transform:rotate(90deg);
+}
+
+.cont .main_c .leftC p{
+    font-size:2em;
+    margin:300px 0;
+    padding-left:50px;
+}
+
+.cont .main_c .rightC{
+    width:66.5%;
+    background:#ffc000;
+}
+.cont .main_c .rightC p:first-of-type{
+    font-size:4.5em;
+    color:#fff;
+    margin:200px 0 0 170px;
+    text-transform:uppercase;
+    line-height:1;
+    text-shadow: 5px 5px orange;
+    font-weight: bold;
+    transform:translateY(-50px);
+    opacity: 0;
+    animation:txt01 1s forwards linear;
+}
+
+@keyframes txt01{
+    100%{transform:translateY(0); opacity: 1;}
+}
+
+.cont .main_c .rightC p:last-of-type{
+    font-size:1.1em;
+    color:#fff;
+    margin:15px 0 25px 170px; 
+    text-transform:uppercase;
+    word-spacing: 20px;
+    opacity: 0;
+    animation:txt02 1s forwards linear;
+}
+
+@keyframes txt02{
+    100%{word-spacing: 0; opacity: 1;}
+}
+
+.cont .main_c .rightC .popUp{
+    font-size:1em;
+    color:#fff;
+    margin:0 0 200px 170px;
+    display:block;
+}
+
+.cont .main_c .popUpImg{
+    position:absolute;
+    left:50%; top:50%;
+    transform:translate(-50%,-50%);
+    z-index:99;
+    background:rgba(0,0,0,0.6);
+    width:100%; height:100%;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    display:none;
+} 
+
+/* .cont .main_c .popUpImg span{
+    color:rgba(0,0,0,0.5);
+    font-size:2em;
+    transform:translate(0, 0);
+} */
+
+.cont .main_c .popUpImg img{width:700px; margin:100px 0;} 
+.cont .vitaImg{
+    position:absolute;
+    left:20%; top:10%;
+    transform:rotate(-360deg) translate(100%, 100%);
+    opacity: 0;
+    animation:img01 1s forwards linear; 
+}
+
+@keyframes img01{
+    100%{transform:rotate(0deg) translate(0, 0); opacity: 1;}
+}
+
+.cont .vitaImg img{
+    width:400px; 
+}
+
